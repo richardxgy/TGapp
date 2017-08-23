@@ -1,0 +1,1751 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		    <!-- 上述3个meta标签必须放在最前面-->
+		   <!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		 
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		 
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+
+		<style>
+			.mui-pull-caption{position: relative; top: -10px; font-size: 18px; }
+			.mui-pull-loading{position: relative; top: -10px; }	
+		</style>
+		
+	</head>
+
+	<body>
+
+		<!-- 缩放式侧滑（类手机QQ） -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable mui-scalable">
+			<!-- 菜单容器 -->
+			<!--//Richard xu 20170823-->
+			<aside class="mui-off-canvas-left mui-transitioning" id="offCanvasSide">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<header class="mui-bar mui-bar-nav">
+							<!--<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>-->
+							<h1 class="mui-title">酷米选</h1>
+							<img src="images/k3.png" style="position: relative;  top: 5px;">
+						</header><br /><br />
+
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<div class="mui-input-row mui-search" style="width:240px; position: relative; top: 8px;">
+									<input type="search" class="mui-input-clear" placeholder="">
+								</div>
+								<button type="button" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-danger">搜索</button>
+							</li>
+						</ul>
+
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								开启智能搜索(附近最优)
+								<div class="mui-switch mui-active">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</li>
+						</ul>
+
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<p>热门搜索</p>
+								<p><button type="button" class="mui-btn mui-btn-danger">亲子特惠游</button>
+									<button type="button" class="mui-btn mui-btn-royal">串串香</button>
+								</p><br />
+								<p><button type="button" class="mui-btn mui-btn-royal">KTV</button>
+									<button type="button" class="mui-btn mui-btn-danger">海鲜自助</button>
+									<button type="button" class="mui-btn mui-btn-success">烤肉</button>
+									
+								</p><br />
+								<p><button type="button" class="mui-btn mui-btn-primary">布丁酒店</button>
+									<button type="button" class="mui-btn mui-btn-success">北京烤鸭</button>
+									<button type="button" class="mui-btn mui-btn-danger">七天连锁</button>
+								</p><br />
+								<p><button type="button" class="mui-btn mui-btn-danger">大悦城</button>
+									<button type="button" class="mui-btn mui-btn-primary">百丽宫影城</button>
+									<button type="button" class="mui-btn mui-btn-danger">避风塘</button>
+								</p><br />
+								<br />
+								<br />
+								<br />
+								<br />
+								<br />
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+			</aside>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap mui-transitioning">
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav" >
+					<a class="mui-icon mui-action-menu mui-icon-search mui-pull-left" href="#offCanvasSide"></a>
+					<h1 class="mui-title">酷米</h1>
+					<img src="images/k2.png" style="position: relative; left: 270px; top: 8px;">
+				</header>
+				<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item mui-active" href="#one">
+						<span class="mui-icon iconfont icon-shouye"></span>
+						<span class="mui-tab-label">首页</span>
+					</a>
+					<a class="mui-tab-item" href="#two">
+						<span class="mui-icon iconfont icon-fujin"></span>
+						<span class="mui-tab-label">附近</span>
+					</a>
+					<a class="mui-tab-item" href="#pullrefresh">
+						<span class="mui-icon iconfont icon-jingpin"></span>
+						<span class="mui-tab-label">精选</span>
+					</a>
+					<a class="mui-tab-item" href="#four">
+						<span class="mui-icon iconfont icon-dingdan"></span>
+						<span class="mui-tab-label">用户</span>
+					</a>
+				</nav>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+
+						<!--第一页-->
+						<div class="mui-control-content mui-active" id="one">
+							<!--头部九宫-->
+							<div id="slider" class="mui-slider" >
+							  <div class="mui-slider-group mui-slider-loop">
+							    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							    
+							    <!-- 第一张 -->
+							    <div class="mui-slider-item">
+							     <ul class="mui-table-view mui-grid-view mui-grid-9">
+							     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							         <a href="#">
+							             <img src="images/ms.png" style="width: 40px; height: 40px;" />
+							             <div class="mui-media-body">美食</div>
+							         </a>
+							     </li>
+							     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							         <a href="#">
+							             <img src="images/dyy.png" style="width: 40px; height: 40px;" />
+							             <div class="mui-media-body">电影</div>
+							         </a>
+							     </li>
+							     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							         <a href="#">
+							             <img src="images/jd.png" style="width: 40px; height: 40px;" />
+							             <div class="mui-media-body">酒店住宿</div>
+							         </a>
+							     </li>
+							     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							         <a href="#">
+							             <img src="images/wm.png" style="width: 40px; height: 40px;" />
+							             <div class="mui-media-body">外卖</div>
+							         </a>
+							     </li>
+							     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							         <a href="#">
+							             <img src="images/ly.png" style="width: 40px; height: 40px;" />
+							             <div class="mui-media-body">旅游</div>
+							         </a>
+							     </li>
+							     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							         <a href="#">
+							             <img src="images/mf.png" style="width: 40px; height: 40px;" />
+							             <div class="mui-media-body">美发</div>
+							         </a>
+							     </li>
+							    
+							         </ul>
+							     
+							    </div>
+							    <!-- 第二张 -->
+							    <div class="mui-slider-item">
+							      <ul class="mui-table-view mui-grid-view mui-grid-9">
+							      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							          <a href="#">
+							              <img src="images/js.png" style="width: 40px; height: 40px;" />
+							              <div class="mui-media-body">健身</div>
+							          </a>
+							      </li>
+							      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							          <a href="#">
+							              <img src="images/fw.png" style="width: 40px; height: 40px;" />
+							              <div class="mui-media-body">生活服务</div>
+							          </a>
+							      </li>
+							      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							          <a href="#">
+							              <img src="images/sy.png" style="width: 40px; height: 40px;" />
+							              <div class="mui-media-body">摄影</div>
+							          </a>
+							      </li>
+							      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							          <a href="#">
+							              <img src="images/KTV.png" style="width: 40px; height: 40px;" />
+							              <div class="mui-media-body">KTV</div>
+							          </a>
+							      </li>
+							      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							          <a href="#">
+							              <img src="images/ylc.png" style="width: 40px; height: 40px;" />
+							              <div class="mui-media-body">游乐园</div>
+							          </a>
+							      </li>
+							      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+							          <a href="#">
+							              <img src="images/px.png" style="width: 40px; height: 40px;" />
+							              <div class="mui-media-body">培训</div>
+							          </a>
+							      </li>
+							      
+							          </ul>
+							      
+							    </div>							    							    
+							  </div>
+							  <div class="mui-slider-indicator">
+							  	<!--<div class="mui-indicator "></div>
+							  	<div class="mui-indicator mui-active"></div>-->
+							    
+							    				    
+							  </div>
+							</div>
+							<br />
+							
+							<!--轮播-->
+							<div id="slider" class="mui-slider" >
+							  <div class="mui-slider-group mui-slider-loop">
+							    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							    <div class="mui-slider-item mui-slider-item-duplicate">
+							      <a href="#">
+							        <img src="images/l6.jpg">
+							      </a>
+							    </div>
+							    <!-- 第一张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img src="images/l1.jpg">
+							      </a>
+							    </div>
+							    <!-- 第二张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img src="images/l2.jpg">
+							      </a>
+							    </div>
+							    <!-- 第三张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img src="images/l3.jpg">
+							      </a>
+							    </div>
+							    <!-- 第四张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img src="images/l4.jpg">
+							      </a>
+							    </div>
+							    <!-- 第五张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img src="images/l5.jpg">
+							      </a>
+							    </div>
+							    <!-- 第六张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img src="images/l6.jpg">
+							      </a>
+							    </div>
+							    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							    <div class="mui-slider-item mui-slider-item-duplicate">
+							      <a href="#">
+							        <img src="images/l1.jpg">
+							      </a>
+							    </div>
+							  </div>
+							  <div class="mui-slider-indicator">
+							    <div class="mui-indicator mui-active"></div>
+							    <div class="mui-indicator"></div>
+							    <div class="mui-indicator"></div>
+							    <div class="mui-indicator"></div>
+							    <div class="mui-indicator"></div>
+							    <div class="mui-indicator"></div>
+							  </div>
+							</div>
+							<br />
+							<!--底部卡片式-->
+							<div style="background-color: #E1673E; width: 100%; height: 180px;">
+								<h3 style="text-align: center; color: white;">新用户专区 NEW</h3>
+								<div class="mui-content">
+								    <div class="mui-row" style="background-color: #E1673E;">
+								        <div class="mui-col-sm-4" style="text-align: center; background-color: white; width: 105px; height: 130px; position: relative; left: 10px;">
+								           <h4>豪华大奖</h4>
+								           <div style="color: red; border: 1px red solid; width: 100px; border-radius: 20px; position: relative; left: 2px; top: 5px;">等你来拿 > </div>
+								           <img src="images/xync.png" style="position: relative; top: 13px;" />								            
+								        </div>
+								        
+								        <div class="mui-col-sm-4" style="text-align: center; background-color: white; width: 105px; position: relative; left: 20px; height: 130px;">
+								           <h4>神卷欢乐送</h4>
+								            <div style="color: red; border: 1px red solid; width: 100px; border-radius: 20px; position: relative; left: 2px; top: 5px;">任你吃 > </div>						           
+								        	<img src="images/ms1.png" style="position: relative; top: 13px;" />	
+								        </div>
+								        
+								        <div class="mui-col-sm-4" style="text-align: center; background-color: white; width: 105px; position: relative; left: 30px; height: 130px;">
+								           <h4>限时五折抢</h4>
+								           <div style="color: red; border: 1px red solid; width: 100px; border-radius: 20px; position: relative; left: 2px; top: 5px;">最高返30 > </div>								           
+								        	<img src="images/dz.png" style="position: relative; top: 13px;" />
+								        </div>
+								    </div>
+								</div>
+							</div>
+							<br />
+							<h4>猜你喜欢</h4>
+							<br />
+							
+							<ul class="mui-table-view">
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/hg.jpg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>八道湾热气羊肉羊蝎子火锅</h4>
+							                <p class="mui-ellipsis">[上南地区]秘制羊腿烧烤套餐,建议3-4人食用</p>
+							            	<span style="color:#E1673E ;"><strong>¥199 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥278</span>
+							            	<span style=";font-size: 14px; position: relative; left: 120px; ">已售 69</span>
+							            </div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/hx.jpg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>五月海鲜罗马自助餐厅</h4>
+							                <p class="mui-ellipsis">[八佰伴]豪华海鲜自助,美味来袭</p>
+							            	<span style="color:#E1673E ;"><strong>¥129 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥199</span>
+							            	<span style=";font-size: 14px; position: relative; left: 120px; ">已售 10485</span>
+							            </div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/kr.jpg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>Shook! Restaurant & Roof Terrace</h4>
+							                <p class="mui-ellipsis">[外滩]三道式午市套餐,建议单人使用</p>
+							            	<span style="color:#E1673E ;"><strong>¥168 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥522</span>
+							            	<span style=";font-size: 14px; position: relative; left: 120px; ">已售 174</span>
+							            </div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/js1.jpeg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>Whale Fitness蓝鲸健身工作室</h4>
+							                <p class="mui-ellipsis">[会展中心]单人私教一对一训练</p>
+							            	<span style="color:#E1673E ;"><strong>¥198 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥600</span>
+							            	<span style=";font-size: 14px; position: relative; left: 120px; ">已售 5423</span>
+							            </div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/sxc.jpg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>书亦烧仙草</h4>
+							                <p class="mui-ellipsis">[支持在线下单]特色饮品三选一</p>
+							            	<span style="color:#E1673E ;"><strong>¥13.5 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥20</span>
+							            	<span style=";font-size: 14px; position: relative; left: 120px; ">已售 18520</span>
+							            </div>
+							        </a>
+							    </li>
+							    
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/sxc.jpg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>书亦烧仙草</h4>
+							                <p class="mui-ellipsis">[支持在线下单]特色饮品三选一</p>
+							            	<span style="color:#E1673E ;"><strong>¥13.5 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥20</span>
+							            	<span style=";font-size: 14px; position: relative; left: 120px; ">已售 18520</span>
+							            </div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media">
+							        <a href="javascript:;">
+							            <img style=" height: 60px; width: 60px; position: relative ; top: 5px;" class="mui-media-object mui-pull-left" src="images/xc.jpg">
+							            <div class="mui-media-body" style="position: relative; left: 10px;">
+							                <h4>CrazyOnes西班牙海鲜饭</h4>
+							                <p class="mui-ellipsis">[2店通用]工作日午市双人餐</p>
+							            	<span style="color:#E1673E ;"><strong>¥99 &nbsp;</strong></span>
+							            	<span style="text-decoration:line-through;font-size: 14px;">¥178</span>
+							            	<span style=";font-size: 14px; position: relative; left: 128px; ">已售 8520</span>
+							            </div>
+							        </a>
+							    </li>
+							    
+							    
+							</ul>
+							
+							
+							
+							
+							
+							
+							
+
+						</div>
+						
+						
+						
+						<!--第二页-->
+						<div class="mui-control-content " id="two">
+							<div class="mui-content">
+								<div style="padding: 10px 10px;">
+									<div id="segmentedControl" class="mui-segmented-control">
+										<a class="mui-control-item mui-active" href="#item2">享美食</a>
+										<a class="mui-control-item" href="#item3">住酒店</a>
+										<a class="mui-control-item" href="#item4">爱玩乐</a>
+										<a class="mui-control-item" href="#item5">爽购物</a>
+									</div>
+								</div>
+								<div>
+									
+									<!--第一个列表-->
+									<div id="item2" class="mui-control-content mui-active">
+										<!--按钮1-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;" >
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;热门&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">小吃快餐</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">绝味川菜</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">点心蛋糕</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<!--按钮2-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">日本料理</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">韩国料理</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">&nbsp;&nbsp;泰国菜&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">&nbsp;江浙菜&nbsp;</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<ul class="mui-table-view">
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/kr.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>守柴炉北京烤鸭(科华路店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥58/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">烤鸭|磨子桥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">200m</span>
+										            	<p style="color:red ;">9091人消费</p>
+										            	<span style=";font-size: 14px;  ">双人套餐50元起,满100减50</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/dg1.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>麦元素(科华路店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥67/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">西点|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">502m</span>
+										            	<p style="color:red ;">2065人消费</p>
+										            	<span style=";font-size: 14px;  ">88元蛋糕3选1,满100减12</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/ccx.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>来伊回清真火锅串串香</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥47/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">串串香|红瓦寺 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">921m</span>
+										            	<p style="color:red ;">487人消费</p>
+										            	<span style=";font-size: 14px;  ">280元暑期特惠8人餐,88代100元</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/dyg.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>sabaidee萨巴蒂.高空花园</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥147/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">泰国菜|桐梓林 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">1.3km</span>
+										            	<p style="color:red ;">1867人消费</p>
+										            	<span style=";font-size: 14px;  ">单人餐28元,4人餐268元起...</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/mx.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>魏道小锅米线</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥14/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">小吃快餐|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">602m</span>
+										            	<p style="color:red ;">2703人消费</p>
+										            	<span style=";font-size: 14px;  ">8.8元超值三鲜米线,满50减12</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/dg1.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>小品糕点(科华路店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥67/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">西点|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">502m</span>
+										            	<p style="color:red ;">2065人消费</p>
+										            	<span style=";font-size: 14px;  ">88元蛋糕3选1,满100减12</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/xc.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>鑫辉烤肉店(科华路店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥58/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">烤鸭|磨子桥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">200m</span>
+										            	<p style="color:red ;">9091人消费</p>
+										            	<span style=";font-size: 14px;  ">双人套餐50元起,满100减50</span>
+										            </div>
+										        </a>
+										    </li>
+										</ul>
+									</div>
+									
+									<!--第二个列表-->
+									<div id="item3" class="mui-control-content">
+										<!--按钮1-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;热门&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">商务出行</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">公寓民宿</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">情侣专享</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<!--按钮2-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">品牌连锁</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">高星特惠</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">青年客栈</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">预定专享</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<ul class="mui-table-view">
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd1.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>海月缤纷酒店(川大国美对面)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥58起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">舒适性|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">600m</span>
+										            	<p style="color:red ;">3291人消费</p>
+										            	<span style=";font-size: 14px;  ">58元房型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd2.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>蒙奇奇主题公寓(四川大学店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥88起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">经济酒店|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">532m</span>
+										            	<p style="color:red ;">2065人消费</p>
+										            	<span style=";font-size: 14px;  ">80元房型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd3.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>橡树林酒店</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥120起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">经济酒店|新南门 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">921m</span>
+										            	<p style="color:red ;">487人消费</p>
+										            	<span style=";font-size: 14px;  ">100元房型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd4.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>sabaidee金陵路4号国际青年旅社</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥76起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">经济酒店|华西坝 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">1.3km</span>
+										            	<p style="color:red ;">1867人消费</p>
+										            	<span style=";font-size: 14px;  ">88元房型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd5.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>成都山海经青年旅社</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥29起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">客栈旅社|新南门 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">602m</span>
+										            	<p style="color:red ;">2703人消费</p>
+										            	<span style=";font-size: 14px;  ">39元房型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd6.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>7天连锁酒店(倪家桥店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥167起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">经济酒店|芳草街 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">756m</span>
+										            	<p style="color:red ;">12065人消费</p>
+										            	<span style=";font-size: 14px;  ">89元房型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd2.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>K&M 主题公寓</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥58起 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">经济酒店|九眼桥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">432m</span>
+										            	<p style="color:red ;">2091人消费</p>
+										            	<span style=";font-size: 14px;  ">120元房型4选1</span>
+										            </div>
+										        </a>
+										    </li>
+										</ul>
+										
+										
+									</div>
+									
+									<!--第三个列表-->
+									<div id="item4" class="mui-control-content">
+										<!--按钮1-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;热门&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">&nbsp;&nbsp;KTV&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">足疗按摩</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">洗浴干蒸</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<!--按钮2-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">&nbsp;电影院&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">美容美发</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;美甲&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">桌游电玩</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<ul class="mui-table-view">
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/kr.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>十音坊精品量贩KTV</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥82/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">量贩式KTV|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">140m</span>
+										            	<p style="color:red ;">9291人消费</p>
+										            	<span style=";font-size: 14px;  ">190元周一至周日20:00~05:30...</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/xc.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>静雅推拿(科院店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;52/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">足疗按摩|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">532m</span>
+										            	<p style="color:red ;">2065人消费</p>
+										            	<span style=";font-size: 14px;  ">52.5元全身推拿...</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/sxc.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>Key Man密室</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥74/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">密室逃脱|新南门 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">921m</span>
+										            	<p style="color:red ;">1487人消费</p>
+										            	<span style=";font-size: 14px;  ">78元单人体验</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/mx.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>天堂电影院私人影吧</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥20/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">私人影院|华西坝 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">1.3km</span>
+										            	<p style="color:red ;">1867人消费</p>
+										            	<span style=";font-size: 14px;  ">满100减10元</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd5.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>千艺美发工作室</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥23/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">美发|新南门 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">602m</span>
+										            	<p style="color:red ;">2703人消费</p>
+										            	<span style=";font-size: 14px;  ">23.5元快速时尚造型</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/cs.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>美联社(省体育馆店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥207/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">美发|芳草街 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">756m</span>
+										            	<p style="color:red ;">12065人消费</p>
+										            	<span style=";font-size: 14px;  ">78元单人洗剪吹造型套餐</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd2.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>学府主题K馆</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥40/人&nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">量贩式KTV|九眼桥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">432m</span>
+										            	<p style="color:red ;">62091人消费</p>
+										            	<span style=";font-size: 14px;  ">套餐39元,79元周一至周日....</span>
+										            </div>
+										        </a>
+										    </li>
+										</ul>
+										
+										
+									</div>
+									
+									
+									<!--第四个列表-->
+									<div id="item5" class="mui-control-content">
+										<!--按钮1-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;热门&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;珠宝&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;时尚&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">&nbsp;&nbsp;大悦城&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<!--按钮2-->
+										<div class="mui-content" >
+										    <div class="mui-row" align="center">
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-danger" style="border-radius: 20px;">&nbsp;&nbsp;&nbsp;鲜花&nbsp;&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;">金融理财</button>
+										                							           
+										        </div>
+										        
+										       	<div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-royal" style="border-radius: 20px;">&nbsp;&nbsp;万象城&nbsp;&nbsp;</button>
+										                							           
+										        </div>
+										        
+										        <div class="mui-col-sm-3 mui-col-xs-12" style="width: 70px; margin: 8px;">
+										            <button type="button" class="mui-btn mui-btn-success" style="border-radius: 20px;">家具家私</button>
+										                							           
+										        </div>
+										        
+										    </div>
+										</div>
+										<br />
+										<ul class="mui-table-view">
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd6.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>ROTASS诺塔思珠宝</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥... &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">婚戒首饰|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">140m</span>
+										            	<p style="color:red ;">29291人消费</p>
+										            	<span style=";font-size: 14px;  ">200元代金券仅售1元</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/dg1.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>美丽田园(九方购物中心店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;502/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">美容SPA|科华北路 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">532m</span>
+										            	<p style="color:red ;">2065人消费</p>
+										            	<span style=";font-size: 14px;  ">价值1360元美白套餐仅售320元</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/jd3.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>惟妙眼镜(春熙路直营店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥568/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">眼镜店|新南门 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">921m</span>
+										            	<p style="color:red ;">1487人消费</p>
+										            	<span style=";font-size: 14px;  ">价值1159元套餐仅售399</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/xc.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>佐冷馋·盐里(339购物中心店)</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥55/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">川菜|华西坝 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">1.3km</span>
+										            	<p style="color:red ;">1867人消费</p>
+										            	<span style=";font-size: 14px;  ">本店支持在线定座</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/mx.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>成都大悦城</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥179/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">综合商场|新南门 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">602m</span>
+										            	<p style="color:red ;">34703人消费</p>
+										            	<span style=";font-size: 14px;  ">团购：仅售99元，价值200元Joy young吃喝玩乐通票团购：仅售99元，价值200元Joy kids吃喝玩乐通票</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/kr.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>Ms.Better贝特花艺</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥117/人 &nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">花店|芳草街 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">756m</span>
+										            	<p style="color:red ;">12065人消费</p>
+										            	<span style=";font-size: 14px;  ">团购：仅售228元，价值298元粉色清新浪漫花盒</span>
+										            </div>
+										        </a>
+										    </li>
+										    
+										    <li class="mui-table-view-cell mui-media">
+										        <a href="javascript:;">
+										            <img style=" height: 60px; width: 60px; position: relative ; top: 20px;" class="mui-media-object mui-pull-left" src="images/sxc.jpg">
+										            <div class="mui-media-body" style="position: relative; left: 10px;">
+										                <h4>IFS国际金融中心</h4>
+										                <span style="color:#E1673E ;">★★★★★</span>
+										                <span style="color:#E1673E ;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;¥1630/人&nbsp;</strong></span>
+										            	<br>					                
+										                <span class="mui-ellipsis" style="font-size: 15px; color:#95959F ;">综合商场|九眼桥 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+										                
+										                <span style="font-size: 15px;background-color:#F0F0F0 ;">432m</span>
+										            	<p style="color:red ;">12091人消费</p>
+										            	<span style=";font-size: 14px;  ">团购：仅售9.9元，价值129元粉水晶手链限时秒杀</span>
+										            </div>
+										        </a>
+										    </li>
+										</ul>
+									</div>
+								</div>
+								
+								
+							</div>
+																										
+							
+							
+							
+							
+						</div>						
+						
+						
+						<!--第三页-->
+						<div class="mui-control-content mui-content " id="pullrefresh">
+							<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+								<div class="mui-scroll">
+									<a class="mui-control-item mui-active" href="#item1mobile">
+										推荐
+									</a>
+									<a class="mui-control-item" href="#item2mobile">
+										热点
+									</a>
+									<a class="mui-control-item" href="#item3mobile">
+										成都
+									</a>
+									<a class="mui-control-item" href="#item4mobile">
+										社会
+									</a>
+									<a class="mui-control-item" href="#item2mobile">
+										美食
+									</a>
+									<a class="mui-control-item" href="#item3mobile">
+										休闲
+									</a>
+									<a class="mui-control-item" href="#item4mobile">
+										亲子
+									</a>
+									<a class="mui-control-item" href="#item6mobile">
+										大片
+									</a>
+								</div>
+							</div>
+							
+							
+								
+								<!--第一个-->
+									<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/k2.png" />
+													<div class="mui-media-body">
+														小酷
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/jd6.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;每次和老婆的旅行总是充满了温馨和惬意&nbsp;&nbsp;&nbsp;------棒棒的酒店</p>
+													
+												</div>
+											</div>
+											
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b1.jpg" />
+													<div class="mui-media-body">
+														滑小稽
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/js1.jpeg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;健身的路上总是充满了未知和惊喜&nbsp;&nbsp;&nbsp;------健身房偶遇妹纸</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b3.jpg" />
+													<div class="mui-media-body">
+														小绿豆
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/sxc.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;烧仙草什么的最喜欢了,对了要加冰的...&nbsp;&nbsp;&nbsp;------贪吃的小绿豆</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/c4.jpg" />
+													<div class="mui-media-body">
+														呆小毛
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/jd4.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;每次想换个发型都要纠结很久,恩还好有酷米帮我选...&nbsp;&nbsp;&nbsp;------帅气逼人</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/ts1.png" />
+													<div class="mui-media-body">
+														隔壁老馋
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/ccx.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;对方不想和你说话并狠狠的撸串...&nbsp;&nbsp;&nbsp;------吃货守则</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b3.jpg" />
+													<div class="mui-media-body">
+														小绿豆
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/sxc.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;烧仙草什么的最喜欢了,对了要加冰的...&nbsp;&nbsp;&nbsp;------贪吃的小绿豆</p>
+													
+												</div>
+											</div>
+										</li>
+											
+									</div>	
+									
+									
+								<!--第二个-->	
+								<div id="item2mobile" class="mui-slider-item mui-control-content">
+									<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/ts1.png" />
+													<div class="mui-media-body">
+														隔壁老馋
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/ccx.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;对方不想和你说话并狠狠的撸串...&nbsp;&nbsp;&nbsp;------吃货守则</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/k2.png" />
+													<div class="mui-media-body">
+														小酷
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/jd6.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;每次和老婆的旅行总是充满了温馨和惬意&nbsp;&nbsp;&nbsp;------棒棒的酒店</p>
+													
+												</div>
+											</div>
+											
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b3.jpg" />
+													<div class="mui-media-body">
+														小绿豆
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/sxc.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;烧仙草什么的最喜欢了,对了要加冰的...&nbsp;&nbsp;&nbsp;------贪吃的小绿豆</p>
+													
+												</div>
+											</div>
+										</li>
+								</div>	
+								
+								
+								<!--第三个-->	
+								<div id="item3mobile" class="mui-slider-item mui-control-content">
+									<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/c4.jpg" />
+													<div class="mui-media-body">
+														呆小毛
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/jd4.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;每次想换个发型都要纠结很久,恩还好有酷米帮我选...&nbsp;&nbsp;&nbsp;------帅气逼人</p>
+													
+												</div>
+											</div>
+										</li>
+								</div>
+								
+								<!--第四个-->	
+								<div id="item4mobile" class="mui-slider-item mui-control-content">
+									<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b3.jpg" />
+													<div class="mui-media-body">
+														小绿豆
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/sxc.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;烧仙草什么的最喜欢了,对了要加冰的...&nbsp;&nbsp;&nbsp;------贪吃的小绿豆</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b1.jpg" />
+													<div class="mui-media-body">
+														滑小稽
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/js1.jpeg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;健身的路上总是充满了未知和惊喜&nbsp;&nbsp;&nbsp;------健身房偶遇妹纸</p>
+													
+												</div>
+											</div>
+										</li>
+								</div>
+								
+								<!--第六个-->	
+								<div id="item6mobile" class="mui-slider-item mui-control-content">
+									<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/c4.jpg" />
+													<div class="mui-media-body">
+														呆小毛
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/jd4.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;每次想换个发型都要纠结很久,恩还好有酷米帮我选...&nbsp;&nbsp;&nbsp;------帅气逼人</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/ts1.png" />
+													<div class="mui-media-body">
+														隔壁老馋
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/ccx.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;对方不想和你说话并狠狠的撸串...&nbsp;&nbsp;&nbsp;------吃货守则</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/b3.jpg" />
+													<div class="mui-media-body">
+														小绿豆
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/sxc.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;烧仙草什么的最喜欢了,对了要加冰的...&nbsp;&nbsp;&nbsp;------贪吃的小绿豆</p>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="mui-table-view-cell">
+											<div class="mui-card">
+												<!--页眉，放置标题-->
+												<div class="mui-card-header mui-card-media">
+													<img src="images/k2.png" />
+													<div class="mui-media-body">
+														小酷
+														<p>发表于 2016-06-30 15:30</p>
+													</div>
+												</div>
+												<!--内容区-->
+												<div class="mui-card-content">
+													<img src="images/jd6.jpg"/>
+												</div>
+												<!--页脚，放置补充信息或支持的操作-->
+												<div class="mui-card-footer">																								
+													<p>&nbsp;&nbsp;&nbsp;&nbsp;每次和老婆的旅行总是充满了温馨和惬意&nbsp;&nbsp;&nbsp;------棒棒的酒店</p>
+													
+												</div>
+											</div>
+											
+										</li>
+								</div>
+									
+									
+									
+									
+									
+											
+						</div>
+						
+						
+						
+
+						<!--第四页-->
+						<div class="mui-control-content " id="four">
+
+							<header class="mui-bar mui-bar-nav">
+								<!--<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>-->
+								<h1 class="mui-title"><strong>用户中心</strong></h1>
+							</header><br /><br />
+
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell ">
+									<a href="setting.html" class="mui-navigate-right">
+										<img class="mui-media-object mui-pull-left" src="images/ks1.png" style="height: 35px; position: relative;top: 20px;">
+										<div class="mui-media-body">
+											<h4 style="height: 35px; position: relative; left: 20px; top: 8px;">酷米小子</h4>
+											<p class="mui-ellipsis" style="height: 35px; position: relative; left: 20px;">个人信息</p>
+										</div>
+									</a>
+								</li>
+							</ul>						
+
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-fukuan"><span class="mui-badge mui-badge-red">2</span></span>
+										<div class="mui-media-body">代付款</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="feedback.html">
+										<span class="mui-icon iconfont icon-shiyong"><span class="mui-badge mui-badge-red">5</span></span>
+										<div class="mui-media-body">待评价</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-tuikuan"></span>
+										<div class="mui-media-body">退款/售后</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-dingdan"><span class="mui-badge mui-badge-red">11</span></span>
+										<div class="mui-media-body">我的订单</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-qiajuan"></span>
+										<div class="mui-media-body">卡卷</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-jifen"></span>
+										<div class="mui-media-body">积分</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon iconfont icon-yue"><span class="mui-badge mui-badge-red">3</span></span>
+										<div class="mui-media-body">余额</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+									<a href="#">
+										<span class="mui-icon mui-icon mui-icon-paperclip"></span>
+										<div class="mui-media-body">信用支付</div>
+									</a>
+								</li>
+							</ul>
+
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/k3.png" style="position: relative; top: 10px;"/>
+									
+									<a style="position: relative; top: -15px; left: 70px;">关于发票</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/sk.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -15px; left: 70px;">社区论坛</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/qw1.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -15px; left: 70px;">在线客服</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/mB.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -14px; left: 70px;">更多设置</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/zd1.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -13px; left: 70px;">会员中心</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/rl.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -14px; left: 70px;">我的收藏</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/wx1.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -14px; left: 70px;">关于酷米</a>
+								</li>
+
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right" style="position: relative; top: 25px;"></a>
+									<img src="images/hp.png" style="position: relative; top: 10px;"/>
+									<a style="position: relative; top: -14px; left: 70px;">退出当前</a>
+								</li>
+
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script>
+			(function($) {
+				$(".mui-scroll-wrapper").scroll({
+					bounce: false, //滚动条是否有弹力默认是true
+					indicators: false, //是否显示滚动条,默认是true
+				});
+			})(mui);
+		</script>
+
+		<script>
+			var gallery = mui('.mui-slider');
+			gallery.slider({
+				interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
+			});
+			mui('.mui-scroll-wrapper').scroll();
+		</script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/swiper.animate.min.js"></script>
+		<script src="js/swiper-3.4.2.jquery.min.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+		<script>
+
+			var mySwiper = new Swiper('.swiper-container', {
+				 direction: 'vertical',
+    			loop: true,
+				onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); //隐藏动画元素 
+					swiperAnimate(swiper); //初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper) {
+					swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				}
+			})
+		</script>
+		<!--下拉刷新的-->
+		
+		
+	</body>
+
+</html>
